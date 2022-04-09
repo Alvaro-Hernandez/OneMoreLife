@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    background: #111;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Supermercado One', cursive;
+    font-weight: 400;
+    text-shadow: 0 0 60px #f20044;
+    color: rgb(255, 24, 93);
+}
+
+.Text{
+    position: absolute;
+    top: 60%;
+    font-size: 30px;
+    font-family: 'Supermercado One', cursive;
+    font-weight: 400;
+    text-shadow: 0 0 60px #f20044;
+    color: rgb(255, 24, 93);   
+}
+
+span{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15% rgba(0, 0, 0, 0.5));
+    animation: moviOut 1s linear infinite;
+
+}
+
+@keyframes moviOut {
+    0%, 100%{
+        opacity: 0;
+
+    }
+    20%, 80%{
+        opacity: 1;
+    }
+}
+
+span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../img/heart.png');
+    background-size: cover;   
+    animation: moveMent 1s linear infinite;
+}
+
+@keyframes moveMent{
+
+    0%{
+        transform: translate(0) rotate(0deg);
+    }
+
+    100%{
+        transform: translate(100px) rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    h1{
+        font-size: 48px;
+        text-shadow: 0 0 45px #f20044;
+    }
+    .Text{
+        font-size:25px;
+        text-shadow: 0 0 45px #f20044;
+        top: 75%;
+    }
+}
